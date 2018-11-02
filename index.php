@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <img src="Huset_logo_6_W.png" alt="huset_logo" width="50%">
+        <img src="Huset_logo_6_W.png" alt="huset_logo" width="50%" height="20%">
         <nav>
             <button class="menu-item">Events</button>
             <button class="menu-item">Skab Events</button>
@@ -27,29 +27,43 @@
             <div class="slideshow_parent_container">
                 <div class="slideshow_text_container">
                     <div class="slideshow_overskrift">
-                        <h3>Hello!</h3>
-                        <section class="container">
-                            <template id="temp">
+                        <div class="mySlides fade">
+                            <section class="container">
+                                <template id="temp">
            <article id="data-page">
                <h2 id="data-pagetitle">title</h2>
                <p id="text"></p>
-           </article>
-
-       </template>
-
-                        </section>
-                    </div>
-                    <div class="slideshow_text">
-                        <p>Hola med dig</p>
+                                </article>
+                                </template>
+                            </section>
+                        </div>
+                        <div class="slideshow_text">
+                            <p>Hola med dig</p>
+                        </div>
                     </div>
                 </div>
                 <div class="slideshow_billede_container">
-                    <!-- BILLEDER HER -->
-                    <h3>Hellooooo</h3>
+                    <div class="mySlides fade">
+
+                        <img src="" style="width:100%">
+
+                    </div>
+
+                    <div class="mySlides fade">
+
+                        <img src="" style="width:100%">
+
+                    </div>
+
+                    <div class="mySlides fade">
+
+                        <img src="" style="width:100%">
+
+                    </div>
+
                 </div>
             </div>
         </section>
-
     </div>
     <script>
         let pagetemplate = document.querySelector("#temp");
@@ -88,6 +102,20 @@
 
                 container.appendChild(klon);
             });
+        }
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
 </body>

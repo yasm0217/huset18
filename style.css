@@ -31,7 +31,12 @@ p {
     height: auto;
 }
 
-img src="Huset_logo_6_W.png" {
-    margin-left: auto;
-    margin-right: auto;
+footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
 }
