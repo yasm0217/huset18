@@ -7,7 +7,6 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="huset_ikon.png" />
-
 </head>
 
 <body>
@@ -117,6 +116,7 @@
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
+
     </script>
 </body>
 
