@@ -1,0 +1,112 @@
+{
+    "dir": "ltr",
+    "lang": "en-GB",
+    "name": "huset tema 7 – Just another WordPress site",
+    "scope": "/kea/huset/wordpress/",
+    "display": "browser",
+    "start_url": "http://ansaari.dk/kea/huset/wordpress/",
+    "short_name": "huset tema 7 ",
+    "theme_color": "transparent",
+    "description": "",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/94429726-d32b-52a4-80f4-f7755ea08fd9.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/870ce418-a87d-80b6-ba51-0b799eec86b4.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/3b792773-fcf1-535e-4f67-f69f716acdf6.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/9a11ff8a-a302-22a4-d47a-d755f800b9fa.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/3852a3eb-412c-d073-58c5-5f3bf88c5c3f.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/03ebb39f-b7e6-33f5-b97a-10525113b2c5.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/a40c9a0c-e8c8-8bbd-fac2-4531f3a51073.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e90fbee6-8c89-232c-bb01-6fe20ae42908.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/04125a6b-d36b-fea1-a1b1-2b448ac7c526.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/23044fb2-2007-bad0-49c5-786e816d14f2.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/52bb9b4b-970a-1b10-c239-92dd3bafc7a3.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/c2e532a7-d2f3-effe-2260-482272eb4e67.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/adb462c0-88f3-3ba0-18ee-049dfcc6dcc6.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/f0c38b57-efde-69c0-ea1b-e7b0607bcbef.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/24e073ef-8594-187a-7257-2e7ebb6b2f24.webPlatform.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e17c3165-340f-c7bf-d094-e0fb7feaed2d.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/91f8445e-cc69-3a0d-a2c5-b1d56bd4ee39.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/fb0e071e-f92a-d653-5bb5-be23130542cc.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e4749313-75b4-fa93-eca7-089143abbd11.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}
