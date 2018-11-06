@@ -5,14 +5,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
     <link rel="shortcut icon" type="image/x-icon" href="huset_ikon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
 <body>
+
+    <div id="formbox">
+
+
+        <form>
+            <input id="navn" type="text" placeholder="Navn" required>
+
+            <input id="email" type="email" placeholder="Email" required><br>
+
+            <textarea id="besked" type="text" placeholder="Ansøgning" required></textarea><br>
+
+            <input id="cv" type="file" placeholder="CV" required><br>
+
+            <input type="submit" value="send">
+
+        </form>
+    </div>
+
     < ? php include="header.html" ;>
         </?>
-        <script src=""></script>
+        <script src="">
+            let svartekst = "";
+            document.querySelector("form").addEventListener("submit", ajaxCall);
+            async function ajaxCall(e) {
+                e.preventDefault();
+                let navn = this.querySelector("input[type=text]").value;
+                let url = "formtest1.php?navn=" + navn;
+                let svar = await fetch(url);
+                svartekst = await svar.text();
+                show();
+                this.querySelector("input[type=text]").value = "";
+            }
+
+            function show(response) {
+                document.querySelector("#response").textContent = svartekst;
+        </script>
 </body>
 
 </html>
