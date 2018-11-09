@@ -31,6 +31,60 @@ p {
     height: auto;
 }
 
+/*Slideshow*/
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+    max-width: 700px;
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 400px;
+    max-height: 400px;
+}
+
+/* Hide the images by default */
+
+/*
+
+.mySlides {
+    display: none;
+}
+*/
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2.5s;
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+
+
+
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -39,4 +93,35 @@ footer {
 header {
     display: flex;
     flex-wrap: wrap;
+}
+
+
+.boks_parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.boks_container {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    padding: 10px;
+}
+
+.boks_tekst {
+    flex-basis: 250px;
+    flex-grow: 1;
+    background: black;
+    max-width: 100%;
+}
+
+.boks_billede img {
+    max-width: 100%;
+}
+
+.boks_billede {
+    flex-basis: 250px;
+    flex-grow: 1;
+    max-width: 100%;
 }
