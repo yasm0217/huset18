@@ -21,49 +21,57 @@
             <button class="menu-item">Nyhedsbrev</button>
         </nav>
     </header>
-    <div class="grid_container">
-        <section class="slideshow">
-            <div class="slideshow_parent_container">
-                <div class="slideshow_text_container">
-                    <div class="slideshow_overskrift">
-                        <div class="mySlides fade">
-                            <section class="container">
-                                <template id="temp">
+    <main>
+        <div class="grid_container">
+            <section id="slideshow">
+                <div class="slideshow_parent_container">
+                    <div class="slideshow_text_container">
+                        <div class="slideshow_overskrift">
+                            <div class="mySlides fade">
+                                <section class="container">
+                                    <template id="temp">
            <article id="data-page">
                <h2 id="data-pagetitle">title</h2>
                <p id="text"></p>
                                 </article>
                                 </template>
-                            </section>
+                                </section>
+                            </div>
+                            <div class="slideshow_text">
+                                <p>Hola med dig</p>
+                            </div>
                         </div>
-                        <div class="slideshow_text">
-                            <p>Hola med dig</p>
+                    </div>
+                    <div class="slideshow_billede_container">
+                        <div class="mySlides fade">
+
+                            <img src="" style="width:100%">
+
                         </div>
+
+                        <div class="mySlides fade">
+
+                            <img src="" style="width:100%">
+
+                        </div>
+
+                        <div class="mySlides fade">
+
+                            <img src="" style="width:100%">
+
+                        </div>
+
                     </div>
                 </div>
-                <div class="slideshow_billede_container">
-                    <div class="mySlides fade">
-
-                        <img src="" style="width:100%">
-
-                    </div>
-
-                    <div class="mySlides fade">
-
-                        <img src="" style="width:100%">
-
-                    </div>
-
-                    <div class="mySlides fade">
-
-                        <img src="" style="width:100%">
-
-                    </div>
-
-                </div>
+            </section>
+        </div>
+        <section id="bokse">
+            <div class="boks_container">
+                <div class="boks_billede"></div>
+                <div class="boks_tekst"></div>
             </div>
         </section>
-    </div>
+    </main>
     <script>
         let pagetemplate = document.querySelector("#temp");
         let container = document.querySelector(".container");
