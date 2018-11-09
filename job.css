@@ -1,7 +1,14 @@
+body {
+    background: #000000;
+}
+
 form {
-    width: 40%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #6a6868;
     padding: 2%;
+
 }
 
 input {
@@ -57,5 +64,33 @@ input[type=submit] {
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+p {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+}
+
+h2,
+h3 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+}
+
+iframe {
+    width: 50%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 
 }
