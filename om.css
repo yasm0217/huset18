@@ -1,7 +1,6 @@
 header img {
     width: 490px;
     padding: 15px;
-
 }
 
 header {
@@ -63,19 +62,17 @@ nav a {
 
 body {
     background: #160F38;
-
 }
 
 p,
 h1,
 h2,
 h3 {
-    max-width: 80%;
+    max-width: 105%;
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
     font-family: 'Raleway', sans-serif;
-
 }
 
 img {
@@ -105,9 +102,17 @@ img {
 }
 
 .pynt {
-    width: 90%;
+
     height: 3px;
     background: #CC3C28;
     margin-left: auto;
     margin-right: auto;
 }
+
+
+#om_huset {
+   padding: 2%;
+}
+
+
+
