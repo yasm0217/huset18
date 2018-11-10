@@ -72,11 +72,26 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 100;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 100;
 }
 
 img {
     width: 80%;
+    align-self: bottom;
+}
+
+#om_huset {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #om_huset .venstre {
@@ -88,6 +103,17 @@ img {
 #om_huset .teksth {
     flex-grow: 1;
     flex-basis: 300px;
+}
+
+.billedev {
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.billedev img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 #omhuset .hoejre {
@@ -102,7 +128,7 @@ img {
 }
 
 .pynt {
-
+    width: 70%;
     height: 3px;
     background: #CC3C28;
     margin-left: auto;
@@ -111,8 +137,5 @@ img {
 
 
 #om_huset {
-   padding: 2%;
+    padding: 2%;
 }
-
-
-
