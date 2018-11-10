@@ -1,6 +1,72 @@
-body {
-    background: #000000;
+header img {
+    width: 490px;
+    padding: 15px;
+
 }
+header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+
+}
+
+
+.btn {
+    color: #999;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    background: #fff;
+    padding: 20px 20px;
+    color: #1b1b1b;
+}
+
+button {
+    border: none;
+}
+
+button {
+    padding: 10px 20px;
+    background: transparent;
+    margin: 5px;
+}
+
+.menu-item {
+    flex-grow: 1;
+}
+
+nav {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+
+body {
+    background: #160F38;
+
+}
+
 
 form {
     max-width: 50%;
@@ -67,19 +133,14 @@ input[type=submit] {
 }
 
 p {
-    max-width: 70%;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    color: #ffffff;
-}
-
+h1,
 h2,
 h3 {
     text-align: center;
@@ -87,10 +148,24 @@ h3 {
     color: #ffffff;
 }
 
-iframe {
+ul {
     width: 50%;
-    align-content: center;
     margin-left: auto;
     margin-right: auto;
+
+}
+
+li {
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+}
+
+iframe {
+    width: 30%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    text-align: center;
 
 }
