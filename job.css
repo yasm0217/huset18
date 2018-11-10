@@ -3,6 +3,7 @@ header img {
     padding: 15px;
 
 }
+
 header {
     margin-left: auto;
     margin-right: auto;
@@ -66,7 +67,6 @@ body {
     background: #160F38;
 
 }
-
 
 form {
     max-width: 50%;
@@ -168,4 +168,12 @@ iframe {
     padding: 15px;
     text-align: center;
 
+}
+
+.pynt {
+    width: 90%;
+    height: 3px;
+    background: #CC3C28;
+    margin-left: auto;
+    margin-right: auto;
 }
