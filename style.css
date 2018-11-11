@@ -12,25 +12,6 @@ p {
     color: #ffffff;
 }
 
-.slideshow_parent_container {
-    background: #6a6868;
-    display: grid;
-    grid-template: auto auto;
-    grid-gap: 10px;
-}
-
-.slideshow_billede_container {
-    background: red;
-    width: 50%;
-    height: auto;
-}
-
-.slideshow_text_container {
-    background: blue;
-    width: 50%;
-    height: auto;
-}
-
 footer {
     display: flex;
     flex-wrap: wrap;
@@ -39,4 +20,35 @@ footer {
 header {
     display: flex;
     flex-wrap: wrap;
+}
+
+
+.boks_parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.boks_container {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    padding: 10px;
+}
+
+.boks_tekst {
+    flex-basis: 250px;
+    flex-grow: 1;
+    background: black;
+    max-width: 100%;
+}
+
+.boks_billede img {
+    max-width: 100%;
+}
+
+.boks_billede {
+    flex-basis: 250px;
+    flex-grow: 1;
+    max-width: 100%;
 }
