@@ -31,78 +31,48 @@
 
     <article id="main_container">
 
+
+
         <div class="event_conainter_mobil">
             <div class="billede_container_mobil">
                 <h1 class="data-titel">Event:</h1>
                 <a href="" class="linktosingle">
-            <img class="data-img" src="musikcafeen_1094_705_fotograf_erik_cheng.jpg">
+            <img class="data-img" src="3.jpg">
         </a>
             </div>
             <div class="linje"></div>
             <div class="tekst_container_mobil">
                 <p class="data-genre">Genre:</p>
-                <p class="data-dato">Dato:</p>
-                <p class="data-tid">Tid:</p>
-                <p class="data-sted">Sted:</p>
-                <p class="data-pris">Pris:</p>
+                <p class="data-dato">Dato:10.11.2018</p>
+                <p class="data-tid">Tid:Kl.20.00</p>
+                <p class="data-sted">Sted:Musikcafen</p>
+                <p class="data-pris">Pris:100 kr.</p>
             </div>
         </div>
+
     </article>
 
     <script>
+        let events;
         let minTemplate = document.querySelector(".event_conainter_mobil");
         let templateModtager = document.querySelector("#main_container");
         async function getJson() {
-            let eventObjekt = await fetch("https://http://ansaari.dk/kea/huset/wp-json/wp/v2/events?per_page=5");
-            let events = await eventObjekt.json();
-            let mitValg;
-            //find events der indeholder de valgte kategorier
-            let musik = events.filter(function(e) {
-                return e.categories.includes(17);
-            });
-            let film = events.filter(function(e) {
-                return e.categories.includes(19)
-            });
+            let eventObjekt = await fetch("https://ansaari.dk/kea/huset/wordpress/wp-json/wp/v2/events");
+            events = await eventObjekt.json();
 
 
-            function valgte(vc, genre) {
-                mitValg = events.filter(function(e) {
-                    return e.categories.includes(vc);
-
-                });
-                console.log(mitValg, genre);
-                visValgte(mitValg, genre);
-            }
-
-
-            visValgte(events);
-
-            document.querySelector('#filterall').addEventListener("click", function() {
-                visValgte(events, "alle");
-            });
-            document.querySelector('#rock').addEventListener("click", function() {
-                valgte(20, "musik");
-            });
-            document.querySelector('#alle').addEventListener("click", function() {
-                valgte(24, "musik");
-            });
-            document.querySelector('#country').addEventListener("click", function() {
-                valgte(23, "musik");
-            });
-            document.querySelector('#pop').addEventListener("click", function() {
-                valgte(22, "musik");
-            });
+            visValgte();
 
         }
 
 
-        function visValgte(evt, cat) {
-            templateModtager.innerHTML = "";
+        function visValgte() {
+          //  templateModtager.innerHTML = "";
 
-            evt.forEach(function(event) {
+            events.forEach(function(event) {
 
                 let klon = minTemplate.cloneNode(true).content;
-                klon.querySelector("section").classList.add(event.acf.genre);
+                //klon.querySelector("section").classList.add(event.acf.genre);
                 klon.querySelector(".data-titel").textContent = event.acf.titel;
                 klon.querySelector(".data-genre").textContent = event.acf.genre;
                 klon.querySelector(".data-img").setAttribute("src", event.acf.billede);

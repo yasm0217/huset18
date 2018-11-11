@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="appCSS.css">
+    <link rel="shortcut icon" type="image/x-icon" href="huset_ikon.png" />
+</head>
+
+<body>
+    <header>
+
+        <div class="logo">
+            <img src="Huset_logo_6_W.png" alt="huset_logo" width="85%"></div>
+        <div class="linje"></div>
+        <nav>
+
+            <button class="menu-item">Events</button>
+            <button class="menu-item" href="om.html">Om</button>
+        </nav>
+        <div class="genre_menu">
+            <button id="rock">Rock</button>
+            <button id="pop">Pop</button>
+            <button id="country'">Country</button>
+            <button id="alle">Alle</button>
+        </div>
+    </header>
+
+
+    <article id="main_container">
+
+
+
+        <div class="event_conainter_mobil">
+            <div class="billede_container_mobil">
+                <h1 class="data-titel">Event:</h1>
+                <a href="" class="linktosingle">
+            <img class="data-img" src="3.jpg">
+        </a>
+            </div>
+            <div class="linje"></div>
+            <div class="tekst_container_mobil">
+                <p class="data-genre">Genre:</p>
+                <p class="data-dato">Dato:10.11.2018</p>
+                <p class="data-tid">Tid:Kl.20.00</p>
+                <p class="data-sted">Sted:Musikcafen</p>
+                <p class="data-pris">Pris:100 kr.</p>
+            </div>
+        </div>
+
+        <div class="event_conainter_mobil">
+            <div class="billede_container_mobil">
+                <h1 class="data-titel">Event:</h1>
+                <a href="" class="linktosingle">
+            <img class="data-img" src="6.jpg">
+        </a>
+            </div>
+            <div class="linje"></div>
+            <div class="tekst_container_mobil">
+                <p class="data-genre">Genre:</p>
+                <p class="data-dato">Dato1:11.11.2018</p>
+                <p class="data-tid">Tid:Kl.19.00</p>
+                <p class="data-sted">Sted:Husets Biograf</p>
+                <p class="data-pris">Pris:50 kr.</p>
+            </div>
+        </div>
+        <div class="event_conainter_mobil">
+            <div class="billede_container_mobil">
+                <h1 class="data-titel">Event:</h1>
+                <a href="" class="linktosingle">
+            <img class="data-img" src="7.jpg">
+        </a>
+            </div>
+            <div class="linje"></div>
+            <div class="tekst_container_mobil">
+                <p class="data-genre">Genre:</p>
+                <p class="data-dato">Dato 09.11.2018:</p>
+                <p class="data-tid">Tid: Kl.19:30</p>
+                <p class="data-sted">Sted:Stardust</p>
+                <p class="data-pris">Pris: 50 kr. </p>
+            </div>
+        </div>
+        <div class="event_conainter_mobil">
+            <div class="billede_container_mobil">
+                <h1 class="data-titel">Event:</h1>
+                <a href="" class="linktosingle">
+            <img class="data-img" src="4.jpg">
+        </a>
+            </div>
+            <div class="linje"></div>
+            <div class="tekst_container_mobil">
+                <p class="data-genre">Genre:</p>
+                <p class="data-dato">Dato:08.11.2018</p>
+                <p class="data-tid">Tid:Kl.20.00</p>
+                <p class="data-sted">Sted:Musikcafen</p>
+                <p class="data-pris">Pris:100 kr.</p>
+            </div>
+        </div>
+
+        <div class="event_conainter_mobil">
+            <div class="billede_container_mobil">
+                <h1 class="data-titel">Event:</h1>
+                <a href="" class="linktosingle">
+            <img class="data-img" src="5.jpg">
+        </a>
+            </div>
+            <div class="linje"></div>
+            <div class="tekst_container_mobil">
+                <p class="data-genre">Genre:</p>
+                <p class="data-dato">Dato:08.11.2018</p>
+                <p class="data-tid">Tid:17.00</p>
+                <p class="data-sted">Sted:Stardust</p>
+                <p class="data-pris">Pris: 50 kr.</p>
+            </div>
+        </div>
+    </article>
+
+    <script>
+        let minTemplate = document.querySelector(".event_conainter_mobil");
+        let templateModtager = document.querySelector("#main_container");
+        async function getJson() {
+            let eventObjekt = await fetch("https://http://ansaari.dk/kea/huset/wp-json/wp/v2/events?per_page=5");
+            let events = await eventObjekt.json();
+            let mitValg;
+            //find events der indeholder de valgte kategorier
+            let musik = events.filter(function(e) {
+                return e.categories.includes(17);
+            });
+            let film = events.filter(function(e) {
+                return e.categories.includes(19)
+            });
+
+
+            function valgte(vc, genre) {
+                mitValg = events.filter(function(e) {
+                    return e.categories.includes(vc);
+
+                });
+                console.log(mitValg, genre);
+                visValgte(mitValg, genre);
+            }
+
+
+            visValgte(events);
+
+            document.querySelector('#filterall').addEventListener("click", function() {
+                visValgte(events, "alle");
+            });
+            document.querySelector('#rock').addEventListener("click", function() {
+                valgte(20, "musik");
+            });
+            document.querySelector('#alle').addEventListener("click", function() {
+                valgte(24, "musik");
+            });
+            document.querySelector('#country').addEventListener("click", function() {
+                valgte(23, "musik");
+            });
+            document.querySelector('#pop').addEventListener("click", function() {
+                valgte(22, "musik");
+            });
+
+        }
+
+
+        function visValgte(evt, cat) {
+            templateModtager.innerHTML = "";
+
+            evt.forEach(function(event) {
+
+                let klon = minTemplate.cloneNode(true).content;
+                klon.querySelector("section").classList.add(event.acf.genre);
+                klon.querySelector(".data-titel").textContent = event.acf.titel;
+                klon.querySelector(".data-genre").textContent = event.acf.genre;
+                klon.querySelector(".data-img").setAttribute("src", event.acf.billede);
+                klon.querySelector(".data-dato").textContent = "dato: " + event.acf.dato;
+                klon.querySelector(".data-tid").textContent = "dørene åbner kl.: " + event.acf.starttid;
+                klon.querySelector(".data-sted").textContent = event.acf.sal;
+                klon.querySelector(".data-pris").textContent = "entre: " + event.acf.billetpris + "kr";
+                klon.querySelector(".linktosingle").setAttribute("href", "singleevent.html?id=" + event.id);
+                templateModtager.appendChild(klon);
+            });
+
+        }
+
+
+        //læs script når DOM er hentet
+        document.addEventListener("DOMContentLoaded", getJson);
+    </script>
+
+</body>
+
+</html>
