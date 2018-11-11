@@ -1,8 +1,10 @@
+//This is the service worker with the Cache-first network
+
 //This is the "Offline page" service worker
 
 //Install stage sets up the offline page in the cache and opens a new cache
 self.addEventListener('install', function(event) {
-  var offlinePage = new Request('offline.html');
+  var offlinePage = new Request('https://mabe-kea.dk/huset/mobil/offline.html');
   event.waitUntil(
     fetch(offlinePage).then(function(response) {
       return caches.open('pwabuilder-offline').then(function(cache) {

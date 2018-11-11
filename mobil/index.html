@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="pwabuilder-sw-register.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Huset kbh. events</title>
+
+    <link rel="manifest" href="manifest.json">
+    <link href="appStyles.css" rel="stylesheet" type="text/css">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="start_url" content="/huset/mobil">
+    <meta name="apple-mobile-web-app-title" content="HUSET KBH">
+    <link rel="apple-touch-icon" sizes="192x192" href="img/icon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/icon@0.75x.png">
+
+
+
+    <style>
+        .subcat {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="maincontainer">
+        <header>
+            <div class="logo">
+                <h1>HUSET´S EVNETS</h1>
+            </div>
+
+
+            <div>
+                <button id="filterall">Alle</button>
+                <button id="filtermusik">Musik</button>
+                <button id="filterfilm">Film</button>
+                <div class="subcat">
+                    <button id="jazz">Jazz</button>
+                    <button id="rock">Rock</button>
+                    <button id="alt">Alt</button>
+                    <button id="folk">Folk</button>
+                    <button id="pop">Pop</button>
+                </div>
+
+            </div>
+        </header>
+        <article id="eventscontainer"></article>
+    </div>
+
+    <template id="event-template">
+    <section class="event">
+        <h2 class="data-titel"></h2>
+        <a href="" class="linktosingle">
+            <img class="data-img" src="">
+        </a>
+        <p class="data-genre"></p>
+        <p class="data-dato"></p>
+        <p class="data-tid"></p>
+        <p class="data-sted"></p>
+        <p class="data-pris"></p>
+    </section>
+</template>
+    <script>
+        let minTemplate = document.querySelector("#event-template");
+        let templateModtager = document.querySelector("#eventscontainer");
+        async function getJson() {
+            let eventObjekt = await fetch("https://ansaari.dk/kea/huset/wordpress/wp-json/wp/v2/events");
+            let events = await eventObjekt.json();
+            let mitValg;
+            //find events der indeholder de valgte kategorier
+            let musik = events.filter(function(e) {
+                return e.categories.includes(17);
+            });
+            let film = events.filter(function(e) {
+                return e.categories.includes(19)
+            });
+
+
+            function valgte(vc, genre) {
+                mitValg = events.filter(function(e) {
+                    return e.categories.includes(vc);
+
+                });
+                console.log(mitValg, genre);
+                visValgte(mitValg, genre);
+            }
+
+
+            visValgte(events);
+
+            document.querySelector('#filtermusik').addEventListener("click", function(e) {
+                visValgte(musik, "musik");
+                //console.log("target",e.target.id);
+            });
+            document.querySelector('#filterfilm').addEventListener("click", function() {
+                visValgte(film, "film");
+            });
+            document.querySelector('#filterall').addEventListener("click", function() {
+                visValgte(events, "all");
+            });
+            document.querySelector('#jazz').addEventListener("click", function() {
+                valgte(21, "musik");
+            });
+            document.querySelector('#rock').addEventListener("click", function() {
+                valgte(20, "musik");
+            });
+            document.querySelector('#alt').addEventListener("click", function() {
+                valgte(24, "musik");
+            });
+            document.querySelector('#folk').addEventListener("click", function() {
+                valgte(23, "musik");
+            });
+            document.querySelector('#pop').addEventListener("click", function() {
+                valgte(22, "musik");
+            });
+
+        }
+
+
+        function visValgte(evt, cat) {
+            templateModtager.innerHTML = "";
+
+            if (cat == "musik") {
+                document.querySelector(".subcat").style.display = "block";
+            } else {
+                document.querySelector(".subcat").style.display = "none";
+            }
+            // console.log(cat);
+
+            evt.forEach(function(event) {
+
+                let klon = minTemplate.cloneNode(true).content;
+                klon.querySelector("section").classList.add(event.acf.genre);
+                klon.querySelector(".data-titel").textContent = event.acf.titel;
+                klon.querySelector(".data-genre").textContent = event.acf.genre;
+                klon.querySelector(".data-img").setAttribute("src", event.acf.billede);
+                klon.querySelector(".data-dato").textContent = "dato: " + event.acf.dato;
+                klon.querySelector(".data-tid").textContent = "dørene åbner kl.: " + event.acf.starttid;
+                klon.querySelector(".data-sted").textContent = event.acf.sal;
+                klon.querySelector(".data-pris").textContent = "entre: " + event.acf.billetpris + "kr";
+                klon.querySelector(".linktosingle").setAttribute("href", "singleevent.html?id=" + event.id);
+                templateModtager.appendChild(klon);
+            });
+
+        }
+
+
+        //læs script når DOM er hentet
+        document.addEventListener("DOMContentLoaded", getJson);
+
+    </script>
+</body>
+
+</html>
