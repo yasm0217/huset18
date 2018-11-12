@@ -31,8 +31,14 @@
 <body>
     <div class="maincontainer">
         <header>
+<<<<<<< HEAD
             <div chusetlass="logo">
                 <h1>HUSET´S EVNETS</h1>
+=======
+            <div class="logo">
+                <img src="Huset_logo_6_W.png">
+                <h4>HUSET´S EVNETS</h4>
+>>>>>>> origin/master
             </div>
 
 
@@ -55,7 +61,11 @@
 
     <template id="event-template">
     <section class="event">
+<<<<<<< HEAD
         <h2 class="data-titel"></h2>
+=======
+        <h3 class="data-title"></h3>
+>>>>>>> origin/master
         <a href="" class="linktosingle">
             <img class="data-img" src="">
         </a>
@@ -137,6 +147,7 @@
 
                 let klon = minTemplate.cloneNode(true).content;
                 klon.querySelector("section").classList.add(event.acf.genre);
+<<<<<<< HEAD
                 klon.querySelector(".data-titel").textContent = event.acf.titel;
                 klon.querySelector(".data-genre").textContent = event.acf.genre;
                 klon.querySelector(".data-img").setAttribute("src", event.acf.billede);
@@ -144,6 +155,17 @@
                 klon.querySelector(".data-tid").textContent = "dørene åbner kl.: " + event.acf.starttid;
                 klon.querySelector(".data-sted").textContent = event.acf.sal;
                 klon.querySelector(".data-pris").textContent = "entre: " + event.acf.billetpris + "kr";
+=======
+                klon.querySelector(".data-title").textContent = event.title.rendered;
+                klon.querySelector(".data-genre").textContent = event.acf.genre;
+                klon.querySelector(".data-img").setAttribute("src", event.acf.billede);
+                klon.querySelector(".data-dato").textContent = "Dato: " + event.acf.dato;
+                klon.querySelector(".data-tid").textContent = "Dørene åbner kl.: " + event.acf.tid;
+                klon.querySelector(".data-sted").textContent = "Sted.: " + event.acf.sted; + "";
+
+                klon.querySelector(".data-pris").textContent = "Entre: " + event.acf.entre + ".kr";
+
+>>>>>>> origin/master
                 klon.querySelector(".linktosingle").setAttribute("href", "singleevent.html?id=" + event.id);
                 templateModtager.appendChild(klon);
             });

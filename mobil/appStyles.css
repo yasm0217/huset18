@@ -5,9 +5,19 @@
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 html {
     font-family: Garamond, Times, "Times New Roman", "serif";
     background: black;
+=======
+
+h4 {color: aliceblue;
+ font-family: 'Avenir Next', sans-serif;}
+
+html {
+    font-family: 'Avenir Next', sans-serif;
+    background: white;
+>>>>>>> origin/master
 }
 
 .genre_menu button {
