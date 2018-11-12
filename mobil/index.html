@@ -16,6 +16,7 @@
     <meta name="apple-mobile-web-app-title" content="HUSET KBH">
     <link rel="apple-touch-icon" sizes="192x192" href="img/icon.png">
     <link rel="apple-touch-icon" sizes="144x144" href="img/icon@0.75x.png">
+    <link rel="shortcut icon" type="image/x-icon" href="huset_ikon.png" />
 
 
 
@@ -31,11 +32,12 @@
     <div class="maincontainer">
         <header>
             <div class="logo">
+                <img src="Huset_logo_6_W.png">
                 <h1>HUSET´S EVNETS</h1>
             </div>
 
 
-            <div>
+            <div class="menu">
                 <button id="filterall">Alle</button>
                 <button id="filtermusik">Musik</button>
                 <button id="filterfilm">Film</button>
@@ -54,7 +56,7 @@
 
     <template id="event-template">
     <section class="event">
-        <h2 class="data-titel"></h2>
+        <h2 class="data-title"></h2>
         <a href="" class="linktosingle">
             <img class="data-img" src="">
         </a>
@@ -63,6 +65,8 @@
         <p class="data-tid"></p>
         <p class="data-sted"></p>
         <p class="data-pris"></p>
+
+
     </section>
 </template>
     <script>
@@ -135,14 +139,20 @@
             evt.forEach(function(event) {
 
                 let klon = minTemplate.cloneNode(true).content;
+
                 klon.querySelector("section").classList.add(event.acf.genre);
-                klon.querySelector(".data-titel").textContent = event.acf.titel;
+                klon.querySelector(".data-title").textContent = event.acf.rendered;
                 klon.querySelector(".data-genre").textContent = event.acf.genre;
                 klon.querySelector(".data-img").setAttribute("src", event.acf.billede);
-                klon.querySelector(".data-dato").textContent = "dato: " + event.acf.dato;
-                klon.querySelector(".data-tid").textContent = "dørene åbner kl.: " + event.acf.starttid;
-                klon.querySelector(".data-sted").textContent = event.acf.sal;
-                klon.querySelector(".data-pris").textContent = "entre: " + event.acf.billetpris + "kr";
+                klon.querySelector(".data-dato").textContent = "Dato: " + event.acf.dato;
+                klon.querySelector(".data-tid").textContent = "Dørene åbner kl.: " + event.acf.tid;
+                klon.querySelector(".data-sted").textContent = "Sted.: " + event.acf.sted; + "";
+
+                klon.querySelector(".data-pris").textContent = "Entre: " + event.acf.entre + ".kr";
+
+
+
+
                 klon.querySelector(".linktosingle").setAttribute("href", "singleevent.html?id=" + event.id);
                 templateModtager.appendChild(klon);
             });
