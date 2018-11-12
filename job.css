@@ -142,8 +142,7 @@ p {
 
 h1,
 h2,
-h3
-{
+h3 {
     text-align: center;
     font-family: 'Avenir Next', sans-serif;
     color: #ffffff;
@@ -180,14 +179,27 @@ iframe {
 }
 
 footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    background: #ffffff;
+    color: white;
+    text-align: center;
+    background: #000000;
     column-count: 3;
+    opacity: 0.8;
 }
 
 h4 {
     font-family: 'Avenir Next', sans-serif;
-    color: #000000;
+    color: #ffffff;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+h5 {
+    font-family: 'Avenir Next', sans-serif;
+    color: #ffffff;
+    font-size: 0.8em;
+    font-weight: 200;
 }
