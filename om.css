@@ -139,3 +139,22 @@ img {
 #om_huset {
     padding: 2%;
 }
+
+footer {
+    display: flex;
+    color: #fff;
+    font-family: Avenir;
+    position: relative;
+    color: #808183;
+    background: black;
+    padding: 20px 20px 20px 20px;
+    font-size: 11px;
+
+}
+
+.footer_boks {
+    flex-grow: 1;
+    flex-basis: 10px;
+    padding: 10px;
+
+}
