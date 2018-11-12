@@ -55,7 +55,7 @@
 
     <template id="event-template">
     <section class="event">
-        <h2 class="data-title"></h2>
+        <h3 class="data-title"></h3>
         <a href="" class="linktosingle">
             <img class="data-img" src="">
         </a>
@@ -140,7 +140,7 @@
                 let klon = minTemplate.cloneNode(true).content;
 
                 klon.querySelector("section").classList.add(event.acf.genre);
-                klon.querySelector(".data-title").textContent = event.acf.rendered;
+                klon.querySelector(".data-title").textContent = event.title.rendered;
                 klon.querySelector(".data-genre").textContent = event.acf.genre;
                 klon.querySelector(".data-img").setAttribute("src", event.acf.billede);
                 klon.querySelector(".data-dato").textContent = "Dato: " + event.acf.dato;
@@ -148,9 +148,6 @@
                 klon.querySelector(".data-sted").textContent = "Sted.: " + event.acf.sted; + "";
 
                 klon.querySelector(".data-pris").textContent = "Entre: " + event.acf.entre + ".kr";
-
-
-
 
                 klon.querySelector(".linktosingle").setAttribute("href", "singleevent.html?id=" + event.id);
                 templateModtager.appendChild(klon);
